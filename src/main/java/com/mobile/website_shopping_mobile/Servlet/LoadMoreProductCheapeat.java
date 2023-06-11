@@ -42,7 +42,18 @@ public class LoadMoreProductCheapeat extends HttpServlet {
                             "                                    <i class=\"fa fa-bolt\"></i> Giảm 20%\n" +
                             "                                </label>   </a>\n" +
                             "                            <div class=\"tool\">\n" +
-                            "                                <button onclick=\"window.location.href='add-to-cart?id="+p.getId()+"';\">\n" +
+                            "                           <button onclick=\"window.location.href='add-to-cart?id="+p.getId()+"';\" style=\"\n" +
+                            "                                    outline: none;\n" +
+                            "                                    background: #fe9203;\n" +
+                            "                                    border: none;\n" +
+                            "                                    padding: 10px 15px;\n" +
+                            "                                    border-radius: 30px;\n" +
+                            "                                    text-align: center;\n" +
+                            "                                    margin-left: 70px;\n" +
+                            "                                    margin-bottom: 20px;\n" +
+                            "                                    color: white;\n" +
+                            "                                    font-weight: 600;\n" +
+                            "                                \">\n" +
                             "                                    Add to Cart\n" +
                             "                                </button>\n" +
                             "                            </div>\n" +

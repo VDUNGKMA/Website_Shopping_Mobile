@@ -41,12 +41,19 @@ public class LoadMoreProduct extends HttpServlet {
                         "                            <i class=\"fa fa-bolt\"></i> Giảm 1.000₫\n" +
                         "                                </label>   </a>\n" +
                         "                        <div class=\"tool\">\n" +
-                        "                            <button onclick=\"window.location.href='add-to-cart?id="+o.getId()+">';\">\n" +
-                        "                                Add to Cart\n" +
-                        "                            </button>\n" +
-                        "                            <button onclick=\"window.location.href='order-now?id="+o.getId()+"&quantity=1';\">\n" +
-                        "                                Buy Now\n" +
-                        "                            </button>\n" +
+                        "    <button onclick=\"window.location.href='add-to-cart?id="+o.getId()+"';\"style=\"\n" +
+                                "                                outline: none;\n" +
+                                "                                background: #fe9203;\n" +
+                                "                                border: none;\n" +
+                                "                                padding: 10px 15px;\n" +
+                                "                                border-radius: 30px;\n" +
+                                "                                text-align: center;\n" +
+                                "                                margin-left: 70px;\n" +
+                                "                                margin-bottom: 20px;\n" +
+                                "                                color: white;\n" +
+                                "                                font-weight: 600;\n" +
+                                "                                \">Add to Cart\n" +
+                                "                            </button>\n" +
                         "                        </div>\n" +
                         "                             </div>\n" +
                         "                </li>");

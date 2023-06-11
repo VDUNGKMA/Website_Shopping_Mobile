@@ -102,8 +102,18 @@
                             <i class="fa fa-bolt"></i> Sản phẩm nổi bật
                                 </label>   </a>
                         <div class="tool">
-                            <button onclick="window.location.href='add-to-cart?id=<%=p.getId()%>';">
-                                Add to Cart
+                            <button onclick="window.location.href='add-to-cart?id=<%=p.getId()%>';"style="
+                                outline: none;
+                                background: #fe9203;
+                                border: none;
+                                padding: 10px 15px;
+                                border-radius: 30px;
+                                text-align: center;
+                                margin-left: 70px;
+                                margin-bottom: 20px;
+                                color: white;
+                                font-weight: 600;
+                                ">Add to Cart
                             </button>
                         </div>
                              </div>
@@ -112,7 +122,19 @@
                 }%>
             </div>
 
-                <button onclick="LoadMore()" class="btn btn-primary">Xem thêm sản phẩm</button>
+                <button onclick="LoadMore()" class="btn btn-primary" style="
+                        outline: none;
+                        background: #3fb8ef;
+                        border: none;
+                        padding: 10px 15px;
+                        border-radius: 30px;
+                        text-align: center;
+                        margin-left: 45%;
+                        margin-bottom: 20px;
+                        margin-top: 20px;
+                        color: white;
+                        font-weight: 600;
+                ">Xem thêm sản phẩm</button>
 
             </div>
             <hr>
@@ -141,7 +163,18 @@
 
                         </a>
                                      <div class="tool">
-                                         <button  onclick="window.location.href='add-to-cart?id=<%=newproduct.getId()%>';" >
+                                         <button  onclick="window.location.href='add-to-cart?id=<%=newproduct.getId()%>';" style="
+                                            outline: none;
+                                            background: #fe9203;
+                                            border: none;
+                                            padding: 10px 15px;
+                                            border-radius: 30px;
+                                            text-align: center;
+                                            margin-left: 70px;
+                                            margin-bottom: 20px;
+                                            color: white;
+                                            font-weight: 600;
+                                        " >
                                        Add to Cart
                                          </button>
                                      </div>
@@ -178,7 +211,18 @@
                                     <i class="fa fa-bolt"></i> Giảm 20%
                                 </label>   </a>
                             <div class="tool">
-                                <button onclick="window.location.href='add-to-cart?id=<%=p.getId()%>';">
+                                <button onclick="window.location.href='add-to-cart?id=<%=p.getId()%>';" style="
+                                    outline: none;
+                                    background: #fe9203;
+                                    border: none;
+                                    padding: 10px 15px;
+                                    border-radius: 30px;
+                                    text-align: center;
+                                    margin-left: 70px;
+                                    margin-bottom: 20px;
+                                    color: white;
+                                    font-weight: 600;
+                                ">
                                     Add to Cart
                                 </button>
                             </div>
@@ -187,7 +231,19 @@
                         }
                     }%>
                 </div>
-                <button onclick="LoadMoreCheapeat()" class="btn btn-primary">Xem thêm sản phẩm</button>
+                <button onclick="LoadMoreCheapeat()" class="btn btn-primary" style="
+                        outline: none;
+                        background: #3fb8ef;
+                        border: none;
+                        padding: 10px 15px;
+                        border-radius: 30px;
+                        text-align: center;
+                        margin-left: 45%;
+                        margin-bottom: 20px;
+                        margin-top: 20px;
+                        color: white;
+                        font-weight: 600;
+                ">Xem thêm sản phẩm</button>
             </div>
             <hr>
         </div>
