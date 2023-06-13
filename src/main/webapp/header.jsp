@@ -1,6 +1,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="com.mobile.website_shopping_mobile.model.Category" %>
 <%@ page import="java.io.PrintWriter" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.mobile.website_shopping_mobile.dao.ProductDao" %>
+<%@ page import="com.mobile.website_shopping_mobile.collection.dbConnection" %>
+<%@ page import="com.mobile.website_shopping_mobile.model.Category" %>
+<%@ page import="com.mobile.website_shopping_mobile.model.Product" %>
+<%@ page import="com.mobile.website_shopping_mobile.model.Category" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="vi">
@@ -9,6 +14,7 @@
     List<Product> products = pd.getTop5Product();
     List<Product> products_chepeat=pd.getAllProductChepeat();
     List<Category> categories=pd.getAllCategory();
+    List<Product> products1=pd.getProduct();
     List<Product> newproducts=pd.getNewProduct();
 %>
 <body>

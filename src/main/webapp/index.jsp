@@ -1,9 +1,5 @@
-<%@ page import="com.mobile.website_shopping_mobile.dao.ProductDao" %>
-<%@ page import="com.mobile.website_shopping_mobile.collection.dbConnection" %>
-<%@ page import="java.util.List" %>
-<%@ page import="com.mobile.website_shopping_mobile.model.Product" %>
-<%@ page import="com.mobile.website_shopping_mobile.model.Category" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="java.text.DecimalFormat" %>
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -92,11 +88,7 @@
                         alt="">
                         <h3><%=p.getName()%></h3>
                         <div class="price">
-                            <strong><%=p.getPrice()%>₫</strong>
-                        </div>
-                        <div class="ratingresult">
-                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                        class="fa fa-star"></i><i class="fa fa-star"></i><span>9999 đánh giá</span>
+                            <strong><%=new DecimalFormat("#,###").format(p.getPrice())%>₫</strong>
                         </div>
                         <label class="giamgia">
                             <i class="fa fa-bolt"></i> Sản phẩm nổi bật
@@ -151,7 +143,7 @@
                             <img src="<%=newproduct.getImage()%>" alt="">
                             <h3><%=newproduct.getName()%></h3>
                             <div class="price">
-                                <strong><%=newproduct.getPrice()%>₫</strong>
+                                <strong><%=new DecimalFormat("#,###").format(newproduct.getPrice())%>₫</strong>
                             </div>
                             <div class="ratingresult">
                                 <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
@@ -201,7 +193,8 @@
                                      alt="">
                                 <h3><%=p.getName()%></h3>
                                 <div class="price">
-                                    <strong><%=p.getPrice()%>₫</strong>
+                                    <strong>
+                                        <%=new DecimalFormat("#,###").format(p.getPrice())%>₫</strong>
                                 </div>
                                 <div class="ratingresult">
                                     <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i

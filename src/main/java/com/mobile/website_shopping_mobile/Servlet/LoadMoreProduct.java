@@ -1,5 +1,5 @@
 package com.mobile.website_shopping_mobile.Servlet;
-
+import java.text.DecimalFormat;
 import com.mobile.website_shopping_mobile.collection.dbConnection;
 import com.mobile.website_shopping_mobile.dao.ProductDao;
 import com.mobile.website_shopping_mobile.model.Product;
@@ -12,7 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.text.NumberFormat;
+import java.util.Currency;
 import java.util.List;
+import java.util.Locale;
 
 @WebServlet("/load-more-product")
 public class LoadMoreProduct extends HttpServlet {
@@ -26,16 +29,12 @@ public class LoadMoreProduct extends HttpServlet {
             for (Product o: products) {
                 out.println("   <li class=\"sanPham\">\n" +
                         "                             <div>\n" +
-                        "                    <a href=\"chitietsanpham?pid=<%=p.getId()%>\">\n" +
+                        "                    <a href=\"chitietsanpham?pid="+o.getId()+"\">\n" +
                         "                        <img src=\""+o.getImage()+"\"\n" +
                         "                        alt=\"\">\n" +
                         "                        <h3>"+o.getName()+"</h3>\n" +
                         "                        <div class=\"price\">\n" +
-                        "                            <strong>"+o.getPrice()+"₫</strong>\n" +
-                        "                        </div>\n" +
-                        "                        <div class=\"ratingresult\">\n" +
-                        "                            <i class=\"fa fa-star\"></i><i class=\"fa fa-star\"></i><i class=\"fa fa-star\"></i><i\n" +
-                        "                        class=\"fa fa-star\"></i><i class=\"fa fa-star\"></i><span>9999 đánh giá</span>\n" +
+                        "                            <strong>"+new DecimalFormat("#,###$").format(o.getPrice())+"</strong>\n" +
                         "                        </div>\n" +
                         "                        <label class=\"giamgia\">\n" +
                         "                            <i class=\"fa fa-bolt\"></i> Giảm 1.000₫\n" +

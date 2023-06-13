@@ -1,7 +1,12 @@
-<%@ page import="com.mobile.website_shopping_mobile.model.Product" %>
+<%@ page import="java.text.NumberFormat" %>
+<%@ page import="java.util.Currency" %>
+<%@ page import="java.util.Locale" %>
+<%@ page import="java.text.DecimalFormat" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%
+  double price = ((Product) request.getAttribute("detail")).getPrice();
+  String  formattedPrice =new DecimalFormat("#,###").format(price);
+%>
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -40,26 +45,16 @@
 </head>
 
 <body>
-
-<script> addTopNav(); </script>
-
 <section>
-  <script> addHeader(); </script>
-
-  <div id="productNotFound" style="min-height: 50vh; text-align: center; margin: 50px; display: none;">
-    <h1 style="color: red; margin-bottom: 10px;">Không tìm thấy sản phẩm</h1>
-    <a href="index.jsp" style="text-decoration: underline;">Quay lại trang chủ</a>
-  </div>
-
+  <%@ include file="header.jsp" %>
   <div class="chitietSanpham" style="margin-bottom: 100px">
     <h1>Điện thoại ${detail.getName()}</h1>
-    <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><span> 347 đánh giá</span></div>
     <div class="rowdetail group">
       <div class="picture">
         <img src="${detail.getImage()}" onclick="opencertain()">
       </div>
       <div class="price_sale">
-        <div class="area_price"><strong>${detail.getPrice()}₫</strong></div>
+        <div class="area_price"><strong><%=formattedPrice%>₫</strong></div>
         <div class="ship" style="display: none;">
           <img src="">
           <div>NHẬN HÀNG TRONG 1 GIỜ</div>
@@ -87,7 +82,7 @@
         </div>
         <div class="area_order">
           <!-- nameProduct là biến toàn cục được khởi tạo giá trị trong phanTich_URL_chiTietSanPham -->
-          <a class="buy_now" onclick="themVaoGioHang(maProduct, nameProduct);">
+          <a class="buy_now" onclick="window.location.href='add-to-cart?id=${detail.getId()}';" >
             <b><i class="fa fa-cart-plus"></i> Thêm vào giỏ hàng</b>
             <p>Giao trong 1 giờ hoặc nhận tại cửa hàng</p>
           </a>

@@ -8,7 +8,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class ProductDao {
@@ -217,21 +219,23 @@ public class ProductDao {
         try {
             if(listCart.size() >0)
                 for (Cart c: listCart) {
-                    query = "select * from products where id=?;";
+                    query = "select * from products where id=? ;";
                     statement = this.connection.prepareStatement(query);
                     statement.setInt(1,c.getId());
                     rs = statement.executeQuery();
                     while (rs.next()) {
-                        Cart row = new Cart();
-                        row.setId(rs.getInt("id"));
-                        row.setName(rs.getString("name"));
-                        row.setPrice(rs.getDouble("price"));
-                        row.setImage(rs.getString("image"));
-                        row.setTotalPrice(rs.getDouble("price")*c.getQuantity());
-                        row.setQuantity(c.getQuantity());
-                        products.add(row);
-                    }
+                            Cart row =new Cart();
+                            row.setId(rs.getInt("id"));
+                            row.setName(rs.getString("name"));
+                            row.setPrice(rs.getDouble("price"));
+                            row.setImage(rs.getString("image"));
+                            row.setTotalPrice(rs.getDouble("price") * c.getQuantity());
+                            row.setQuantity(c.getQuantity());
+                            row.setOrderTime(c.getOrderTime());
+                            products.add(row);
                         }
+                    }
+
 
 
         } catch (Exception e) {

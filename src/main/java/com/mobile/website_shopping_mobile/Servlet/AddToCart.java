@@ -27,6 +27,7 @@ public class AddToCart extends HttpServlet {
             Cart cart = new Cart();
             cart.setId(id);
             cart.setQuantity(1);
+            cart.setOrderTime(System.currentTimeMillis());
 
             HttpSession session = req.getSession();
             ArrayList<Cart> cart_list = (ArrayList<Cart>) session.getAttribute("cart_list");

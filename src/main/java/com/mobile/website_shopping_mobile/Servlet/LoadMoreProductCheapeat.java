@@ -1,5 +1,5 @@
 package com.mobile.website_shopping_mobile.Servlet;
-
+import java.text.DecimalFormat;
 import com.mobile.website_shopping_mobile.collection.dbConnection;
 import com.mobile.website_shopping_mobile.dao.ProductDao;
 import com.mobile.website_shopping_mobile.model.Product;
@@ -32,12 +32,9 @@ public class LoadMoreProductCheapeat extends HttpServlet {
                             "                                     alt=\"\">\n" +
                             "                                <h3>"+p.getName()+"</h3>\n" +
                             "                                <div class=\"price\">\n" +
-                            "                                    <strong>"+p.getPrice()+">₫</strong>\n" +
+                            "                                    <strong>"+new DecimalFormat("#,###$").format(p.getPrice())+"</strong>\n" +
                             "                                </div>\n" +
-                            "                                <div class=\"ratingresult\">\n" +
-                            "                                    <i class=\"fa fa-star\"></i><i class=\"fa fa-star\"></i><i class=\"fa fa-star\"></i><i\n" +
-                            "                                        class=\"fa fa-star\"></i><i class=\"fa fa-star\"></i><span>9999 đánh giá</span>\n" +
-                            "                                </div>\n" +
+
                             "                                <label class=\"giamgia\">\n" +
                             "                                    <i class=\"fa fa-bolt\"></i> Giảm 20%\n" +
                             "                                </label>   </a>\n" +

@@ -1,10 +1,8 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="com.mobile.website_shopping_mobile.model.Cart" %>
-<%@ page import="java.util.List" %>
-<%@ page import="com.mobile.website_shopping_mobile.dao.ProductDao" %>
-<%@ page import="com.mobile.website_shopping_mobile.collection.dbConnection" %>
-<%@ page import="com.mobile.website_shopping_mobile.model.Product" %>
+<%@ page import="java.util.Collections" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="java.text.DecimalFormat" %>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <!DOCTYPE html>
 <html lang="vi">
@@ -66,6 +64,7 @@
 	<%
 			if(listCart != null){
 				int j=1;
+				Collections.reverse(cartproducts); //hàm đảo ngược danh sách
 				for (Cart c: cartproducts) { %>
 						<tr>
 						<td><%=j++%></td>
@@ -75,7 +74,8 @@
 								<img src="<%=c.getImage()%>">
 							</a>
 						</td>
-						<td class="alignRight"><%=c.getPrice()%> ₫</td>
+
+						<td class="alignRight"><%=new DecimalFormat("#,###").format(c.getPrice())%> ₫</td>
 						<td class="soluong">
 							<a class="btn btn-sm btn-decre" href="quantity-inc-dec?action=inc&id=<%=c.getId()%>">
 								<i class="fa fa-plus"></i> </a>
@@ -83,12 +83,13 @@
 							<a class="btn bnt-sm btn-incre" href="quantity-inc-dec?action=dec&id=<%=c.getId()%>">
 								<i class="fa fa-minus"></i>  </a>
 						</td>
-						<td class="alignRight"><%=c.getTotalPrice()%>₫</td>
-<%--						<td style="text-align: center" id="hvn"></td>--%>
-						<td>
-							<a class="btn btn-sm btn-buynow" href="order-now?id=<%=c.getId()%>&quantity=<%=c.getQuantity()%>">Buy Now</a>
-						</td>
-						<td class="noPadding" >
+						<td class="alignRight"><%=new DecimalFormat("#,###").format(c.getTotalPrice())%>₫</td>
+<%--Lớp java.time.LocalDateTime cho phép bạn tạo một đối tượng đại diện cho ngày và giờ từ giá trị thời gian dưới dạng java.time.Instant.--%>
+<%--Trong trường hợp này, chúng ta sử dụng java.time.Instant.ofEpochMilli() để chuyển đổi giá trị c.getOrderTime() từ kiểu long sang java.time.Instant,--%>
+<%--sau đó chúng ta sử dụng java.time.LocalDateTime.ofInstant() để chuyển đổi Instant thành LocalDateTime.--%>
+<%--Cuối cùng, chúng ta cung cấp java.time.ZoneId.systemDefault() để xác định múi giờ mặc định của hệ thống.--%>
+				<td style="text-align: center" class="hvn"><%= java.time.LocalDateTime.ofInstant(java.time.Instant.ofEpochMilli(c.getOrderTime()), java.time.ZoneId.systemDefault()) %></td>
+							<td class="noPadding" >
 							<a class="btn btn-sm btn-remove" href="remove-product-form-cart?id=<%=c.getId()%>"><i class="fa fa-trash" ></i>  </a>
 						</td>
 					</tr> <%
@@ -112,12 +113,9 @@
 
 	<i class="fa fa-arrow-up" id="goto-top-page" onclick="gotoTop()"></i>
 </body>
-<script>
-	var today = new Date();
-	var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
-	var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-	var dateTime = date+' '+time;
 
-	document.getElementById("hvn").innerHTML = dateTime;
-</script>
+
+
+
+
 </html>
