@@ -14,7 +14,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Thế giới điện thoại</title>
+  <title>HDPhone</title>
   <link rel="shortcut icon" href="img/favicon.ico" />
 
   <!-- Load font awesome icons -->
@@ -48,7 +48,7 @@
 <section>
   <%@ include file="header.jsp" %>
   <div class="chitietSanpham" style="margin-bottom: 100px">
-    <h1>Điện thoại ${detail.getName()}</h1>
+    <h1>Phone ${detail.getName()}</h1>
     <div class="rowdetail group">
       <div class="picture">
         <img src="${detail.getImage()}" onclick="opencertain()">
@@ -57,34 +57,34 @@
         <div class="area_price"><strong><%=formattedPrice%>₫</strong></div>
         <div class="ship" style="display: none;">
           <img src="">
-          <div>NHẬN HÀNG TRONG 1 GIỜ</div>
+          <div>DELIVERY IN 1 HOUR</div>
         </div>
         <div class="area_promo">
-          <strong>khuyến mãi</strong>
+          <strong>Sale</strong>
           <div class="promo">
             <img src="img/chitietsanpham/icon-tick.png">
-            <div id="detailPromo">Cơ hội trúng <span style="font-weight: bold">61 xe Wave Alpha</span> khi trả góp Home Credit</div>
+            <div id="detailPromo">Chance to win <span style="font-weight: bold">61 Wave Alpha cars</span> when paying in installments Home Credit</div>
           </div>
         </div>
         <div class="policy">
           <div>
             <img src="img/chitietsanpham/box.png">
-            <p>Trong hộp có: Sạc, Tai nghe, Sách hướng dẫn, Cây lấy sim, Ốp lưng </p>
+            <p>In the box there are: Charger, Headphones, Manual, Sim tree, Case </p>
           </div>
           <div>
             <img src="img/chitietsanpham/icon-baohanh.png">
-            <p>Bảo hành chính hãng 12 tháng.</p>
+            <p>Genuine warranty 12 months.</p>
           </div>
           <div class="last">
             <img src="img/chitietsanpham/1-1.jpg">
-            <p>1 đổi 1 trong 1 tháng nếu lỗi, đổi sản phẩm tại nhà trong 1 ngày.</p>
+            <p>1 exchange 1 in 1 month if defective, exchange products at home in 1 day.</p>
           </div>
         </div>
         <div class="area_order">
           <!-- nameProduct là biến toàn cục được khởi tạo giá trị trong phanTich_URL_chiTietSanPham -->
           <a class="buy_now" onclick="window.location.href='add-to-cart?id=${detail.getId()}';" >
-            <b><i class="fa fa-cart-plus"></i> Thêm vào giỏ hàng</b>
-            <p>Giao trong 1 giờ hoặc nhận tại cửa hàng</p>
+            <b><i class="fa fa-cart-plus"></i> Add to order</b>
+            <p>Deliver in 1 hour or pick up in store</p>
           </a>
         </div>
       </div>

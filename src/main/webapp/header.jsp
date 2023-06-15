@@ -29,15 +29,15 @@
         <div class="search-header" style="position: relative; left: 162px; top: 1px;">
             <form class="input-search" method="get" action="search">
                 <div class="autocomplete">
-                    <input id="search-box" name="search" VALUE="${input_search}" autocomplete="off" type="text" placeholder="Nhập từ khóa tìm kiếm...">
+                    <input id="search-box" name="search" VALUE="${input_search}" autocomplete="off" type="text" placeholder="Keyword Search...">
                     <button type="submit">
                         <i class="fa fa-search"></i>
-                        Tìm kiếm
+                        Search
                     </button>
                 </div>
             </form> <!-- End Form search -->
             <div class="tags">
-                <strong>Từ khóa:
+                <strong>Keyword:
                     <%
                         int i=0;
                         for (Category c:categories ) {%>
@@ -61,11 +61,11 @@
                     <% if(session.getAttribute("name") !=null){ %>
                             <%=session.getAttribute("name")%>
                     <div class="menuMember ">
-                        <a href="nguoidung.jsp">Trang người dùng</a>
-                        <a href="logout">Đăng xuất</a>
+                        <a href="nguoidung.jsp">user page</a>
+                        <a href="logout">Logout</a>
                     </div>
                    <% } else { %>
-                           Tài khoản của tôi
+                           Account
                    <% } %>
                 </a>
 
@@ -75,7 +75,7 @@
             <div class="cart">
                 <a href="giohang.jsp">
                     <i class="fa fa-shopping-cart"></i>
-                    <span>Giỏ hàng</span>
+                    <span>Cart</span>
                     <span class="cart-number">${cart_list.size()}</span>
                 </a>
             </div> <!-- End Cart -->
@@ -83,7 +83,7 @@
             <div class="check-order">
                 <a href="manager">
                     <i class="fa fa-truck"></i>
-                    <span>Đơn hàng</span>
+                    <span>Order</span>
                 </a>
             </div>
         </div><!-- End Tools Member -->

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <title>Thế giới điện thoại</title>
+  <title>HDPhone</title>
   <link rel="shortcut icon" href="img/favicon.ico" />
 
   <!-- Load font awesome icons -->
@@ -38,7 +38,7 @@
 
 <section>
   <script> addHeader(); </script>
-  <img src="img/banners/blackFriday.gif" alt="" style="width: 100%;">
+  <img src="https://previews.123rf.com/images/gmast3r/gmast3r1710/gmast3r171002170/88646835-black-friday-sale-template-horizontal-banner-discounts-on-modern-smart-phones-poster-design-vector.jpg" alt="" style="width: 100%;">
 
   <div class="infoUser">
 

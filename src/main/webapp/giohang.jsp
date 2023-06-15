@@ -23,7 +23,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="shortcut icon" href="img/favicon.ico" />
 
-	<title>Thế giới điện thoại</title>
+	<title>HDPhone</title>
 
 	<!-- Load font awesome icons -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -54,12 +54,12 @@
 			<tbody>
 			<tr>
 				<th>STT</th>
-				<th>Sản phẩm</th>
-				<th>Giá</th>
-				<th>Số lượng</th>
-				<th>Thành tiền</th>
-				<th>Thời gian</th>
-				<th>Xóa</th>
+				<th>Product</th>
+				<th>Price</th>
+				<th>quantity</th>
+				<th>total</th>
+				<th>time</th>
+				<th>delete</th>
 			</tr>
 	<%
 			if(listCart != null){
@@ -96,10 +96,10 @@
 				}
 			}%>
 			<tr style="font-weight:bold; text-align:center">
-				<td colspan="4">TỔNG TIỀN: </td>
+				<td colspan="4">TOTAL: </td>
 				<td class="alignRight">${total>0 ?total:0} ₫</td>
-				<td class="thanhtoan" onclick="thanhToan()"> Thanh Toán </td>
-				<td class="xoaHet"> <a class="btn btn-primary btn-block"  href="remove-product-form-cart" role="button">Xóa hết</a> </td>
+				<td class="thanhtoan" onclick="thanhToan()"> BUY </td>
+				<td class="xoaHet"> <a class="btn btn-primary btn-block"  href="remove-product-form-cart" role="button">DELETE ALL</a> </td>
 			</tr>
 			</tbody>
 		</table>

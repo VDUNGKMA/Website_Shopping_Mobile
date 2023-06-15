@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Giới thiệu - Thế giới điện thoại</title>
+    <title>Giới thiệu - HDPhone</title>
     <link rel="shortcut icon" href="img/favicon.ico" />
 
     <!-- Load font awesome icons -->
@@ -28,7 +28,7 @@
     <script>
         window.onload = function () {
             khoiTao();
-            // thêm tags (từ khóa) vào khung tìm kiếm
+            // thêm tags (Keyword) vào khung Search
             var tags = ["Samsung", "iPhone", "Huawei", "Oppo", "Mobi"];
             for (var t of tags) addTags(t, "index.html?search=" + t);
         }

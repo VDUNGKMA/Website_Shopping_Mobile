@@ -45,7 +45,7 @@
 				border-radius: 10px;
 				height: 35px;
 				width: 300px;
-				/* điều chỉnh width của ô tìm kiếm trên header ở đây */
+				/* điều chỉnh width của ô Search trên header ở đây */
 			}
 			.input-search input {
 				float: left;

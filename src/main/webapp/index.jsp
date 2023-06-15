@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Thế giới điện thoại</title>
+    <title>HDPhone</title>
     <link rel="shortcut icon" href="img/favicon.ico"/>
 
     <!-- Load font awesome icons -->
@@ -47,13 +47,14 @@
 
 
 <section>
+    <input type="hidden" id="status"  value="<%= request.getAttribute("status")%>">
     <%@ include file="header.jsp" %>
 
     <div class="banner">
         <div class="owl-carousel owl-theme"></div>
     </div> <!-- End Banner -->
 
-    <img src="img/banners/blackFriday.gif" alt="" style="width: 100%;">
+    <img src="https://previews.123rf.com/images/gmast3r/gmast3r1710/gmast3r171002170/88646835-black-friday-sale-template-horizontal-banner-discounts-on-modern-smart-phones-poster-design-vector.jpg" alt="" style="width: 100%;">
 
     <br>
     <div class="companyMenu group flexContain">
@@ -70,18 +71,18 @@
 
 
 
-    <!-- Div hiển thị khung sp hot, khuyến mãi, mới ra mắt ... -->
+    <!-- Div hiển thị khung sp hot, Sale, Newly released ... -->
     <div class="contain-khungSanPham">
 
 
-        <div class="khungSanPham" style="border-color: #ff9c00">
+        <div class="khungSanPham" style="background: #f7e3c5;border-color: #ff9c00;">
             <h3 class="tenKhung"
-                style="background-image: linear-gradient(120deg, #ff9c00 0%, #ec1f1f 50%, #ff9c00 100%);">* NỔI BẬT NHẤT
+                style="background-image: linear-gradient(120deg, #ff9c00 0%, #ec1f1f 50%, #ff9c00 100%);">* MOST HIGHLIGHTS
                 *</h3>
             <div id="content" class="listSpTrongKhung flexContain">
                 <% if(!products.isEmpty()){
                     for (Product p: products) { %>
-                         <li class="sanPham">
+                         <li class="sanPham" style="background-color: #ffff;border: none;margin: 5px; border-radius: 10px;">
                              <div>
                     <a href="chitietsanpham?pid=<%=p.getId()%>">
                         <img src="<%=p.getImage()%>"
@@ -91,7 +92,7 @@
                             <strong><%=new DecimalFormat("#,###").format(p.getPrice())%>₫</strong>
                         </div>
                         <label class="giamgia">
-                            <i class="fa fa-bolt"></i> Sản phẩm nổi bật
+                            <i class="fa fa-bolt"></i> Featured products
                                 </label>   </a>
                         <div class="tool">
                             <button onclick="window.location.href='add-to-cart?id=<%=p.getId()%>';"style="
@@ -101,7 +102,7 @@
                                 padding: 10px 15px;
                                 border-radius: 30px;
                                 text-align: center;
-                                margin-left: 70px;
+                                margin-left: 60px;
                                 margin-bottom: 20px;
                                 color: white;
                                 font-weight: 600;
@@ -121,19 +122,18 @@
                         padding: 10px 15px;
                         border-radius: 30px;
                         text-align: center;
-                        margin-left: 45%;
+                        margin-left: 46.6%;
                         margin-bottom: 20px;
                         margin-top: 20px;
                         color: white;
                         font-weight: 600;
-                ">Xem thêm sản phẩm</button>
+                ">Show more</button>
 
             </div>
             <hr>
-            <div class="khungSanPham" style="border-color: #42bcf4">
+            <div class="khungSanPham" style="background-color: #98d3ee;border-color: #42bcf4">
                 <h3 class="tenKhung"
-                    style="background-image: linear-gradient(120deg, #42bcf4 0%, #004c70 50%, #42bcf4 100%);">* SẢN PHẨM
-                    MỚI *</h3>
+                    style="background-image: linear-gradient(120deg, #42bcf4 0%, #004c70 50%, #42bcf4 100%);">* NEW PRODUCTS *</h3>
                 <div class="listSpTrongKhung flexContain">
                     <%
                         if(!newproducts.isEmpty()){
@@ -145,12 +145,9 @@
                             <div class="price">
                                 <strong><%=new DecimalFormat("#,###").format(newproduct.getPrice())%>₫</strong>
                             </div>
-                            <div class="ratingresult">
-                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                class="fa fa-star"></i><i class="fa fa-star-o"></i><span>372 đánh giá</span>
-                            </div>
+                            
                             <label class="moiramat">
-                                        Mới ra mắt
+                                        Newly released
                             </label>
 
                         </a>
@@ -162,7 +159,7 @@
                                             padding: 10px 15px;
                                             border-radius: 30px;
                                             text-align: center;
-                                            margin-left: 70px;
+                                            margin-left: 60px;
                                             margin-bottom: 20px;
                                             color: white;
                                             font-weight: 600;
@@ -179,10 +176,9 @@
                 </div>
             </div>
             <hr>
-            <div class="khungSanPham" style="border-color: #5de272">
+            <div class="khungSanPham" style="background-color: #a5f3b1;border-color: #5de272">
                 <h3 class="tenKhung"
-                    style="background-image: linear-gradient(120deg, #5de272 0%, #007012 50%, #5de272 100%);">* GIÁ RẺ
-                    CHO MỌI NHÀ *</h3>
+                    style="background-image: linear-gradient(120deg, #5de272 0%, #007012 50%, #5de272 100%);">* CHEAP FOR ALL *</h3>
                 <div id="content1" class="listSpTrongKhung flexContain" >
                     <% if(!products.isEmpty()){
                         for (Product p: products_chepeat) { %>
@@ -196,12 +192,9 @@
                                     <strong>
                                         <%=new DecimalFormat("#,###").format(p.getPrice())%>₫</strong>
                                 </div>
-                                <div class="ratingresult">
-                                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                        class="fa fa-star"></i><i class="fa fa-star"></i><span>9999 đánh giá</span>
-                                </div>
+                                
                                 <label class="giamgia">
-                                    <i class="fa fa-bolt"></i> Giảm 20%
+                                    <i class="fa fa-bolt"></i> Sale 20%
                                 </label>   </a>
                             <div class="tool">
                                 <button onclick="window.location.href='add-to-cart?id=<%=p.getId()%>';" style="
@@ -211,7 +204,7 @@
                                     padding: 10px 15px;
                                     border-radius: 30px;
                                     text-align: center;
-                                    margin-left: 70px;
+                                    margin-left: 60px;
                                     margin-bottom: 20px;
                                     color: white;
                                     font-weight: 600;
@@ -231,12 +224,12 @@
                         padding: 10px 15px;
                         border-radius: 30px;
                         text-align: center;
-                        margin-left: 45%;
+                        margin-left: 46.6%;
                         margin-bottom: 20px;
                         margin-top: 20px;
                         color: white;
                         font-weight: 600;
-                ">Xem thêm sản phẩm</button>
+                ">Show more</button>
             </div>
             <hr>
         </div>

@@ -15,13 +15,13 @@
     <div class="taikhoan">
 
         <ul class="tab-group">
-            <li class="tab active"><a href="#login">Đăng nhập</a></li>
-            <li class="tab "><a href="#signup">Đăng kí</a></li>
+            <li class="tab active"><a href="#login">Login</a></li>
+            <li class="tab "><a href="#signup">Register</a></li>
         </ul> <!-- /tab group -->
 
         <div class="tab-content">
             <div id="login" style="display: block;">
-                <h1>Chào mừng bạn trở lại!</h1>
+                <h1>WELCOME TO  BACK</h1>
 
                 <form method="post" action="login" class="register-form"
                       id="login-form">
@@ -40,28 +40,28 @@
 
                     </div> <!-- pass -->
 
-                    <p class="forgot"><a href="forgotPassword.jsp">Quên mật khẩu?</a></p>
+                    <p class="forgot"><a href="forgotPassword.jsp">Forgot Password</a></p>
 
-                    <button type="submit" class="button button-block">Tiếp tục</button>
+                    <button type="submit" class="button button-block">Continue</button>
 
                 </form> <!-- /form -->
 
             </div> <!-- /log in -->
 
             <div id="signup" style="display: none;">
-                <h1>Đăng kí miễn phí</h1>
+                <h1>Register free</h1>
 
                 <form method="post" action="register" class="register-form">
 
                     <div class="top-row">
                         <div class="field-wrap">
 
-                            <input type="text" name="ho" id="ho" placeholder="Ho" required />
+                            <input type="text" name="ho" id="ho" placeholder="FirstName" required />
                         </div>
 
                         <div class="field-wrap">
 
-                            <input type="text" name="ten" id="ten" placeholder="Ten" required />
+                            <input type="text" name="ten" id="ten" placeholder="LastName" required />
                         </div>
                     </div> <!-- / ho ten -->
 
@@ -78,7 +78,7 @@
                         <input name="password" type="password" placeholder="Password" required >
                     </div> <!-- /pass -->
 
-                    <button type="submit" class="button button-block">Tạo tài khoản</button>
+                    <button type="submit" class="button button-block">Create account</button>
 
                 </form> <!-- /form -->
 

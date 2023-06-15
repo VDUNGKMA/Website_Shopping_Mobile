@@ -31,9 +31,9 @@ function addEventCloseAlertButton() {
         });
 }
 
-// ================ Cart Number + Thêm vào Giỏ hàng ======================
+// ================ Cart Number + Thêm vào Order ======================
 function animateCartNumber() {
-    // Hiệu ứng cho icon giỏ hàng
+    // Hiệu ứng cho icon Order
     const cn = document.getElementsByClassName('cart-number')[0];
     cn.style.transform = 'scale(2)';
     cn.style.backgroundColor = 'rgba(255, 0, 0, 0.8)';
@@ -67,9 +67,10 @@ function addFooter() {
 
     <!-- ============== Footer ============= -->
     <div class="copy-right">
-        <p><a href="index.jsp">SmartPhone Store</a> - © 2007 - 2023 Công Ty Cổ Phần Bán Lẻ Kỹ Thuật Số FPT / Địa chỉ: 261 - 263 Khánh Hội, P5, Q4, TP. Hồ Chí Minh / GPĐKKD số 0311609355 do Sở KHĐT TP.HCM cấp ngày 08/03/2012. GP số 47/GP-TTĐT do sở TTTT TP HCM cấp ngày 02/07/2018. Điện thoại: (028) 7302 3456. Email: fptshop@fpt.com.vn.
-            <span style="color: #eee; font-weight: bold">abc</span></p>
-    </div>`);
+        <p><a href="index.jsp">SmartPhone Store</a> - Công Ty Cổ Phần Bán Lẻ Kỹ Thuật Số HD Phone / Địa chỉ: 141 chiến thắng, tân triều, thanh trì, hà nội </p>
+        <p>Điện thoại: (028) 7302 3456. Email: hdphone@hd.com.vn.</p>
+    </div>
+    `);
 }
 
 

@@ -13,11 +13,14 @@
 
 	/* <li> trong homeproduct có class="sanPham" , khai báo trong classes.js */
 	.sanPham {
-		width: 238px;
-		border: 1px solid #eee;
-    	-webkit-transition-duration: .3s;
-    	     -o-transition-duration: .3s;
-    	        transition-duration: .3s;
+		background: #fff;
+		margin: 5px;
+		width: 220px;
+		/* border: 1px solid #eee; */
+		-webkit-transition-duration: .3s;
+		-o-transition-duration: .3s;
+		transition-duration: .3s;
+		border-radius: 10px;
 	}
 .product {
 	width: 238px;
