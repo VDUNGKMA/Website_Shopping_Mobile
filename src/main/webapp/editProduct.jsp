@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,7 +57,7 @@
                         </div>
                         <div class="form-group">
                             <label>Price</label>
-                            <input value="${detail.getPrice()}" name="price" type="text" class="form-control" required>
+                            <input value="<fmt:formatNumber type="currency" value="${detail.getPrice()}" currencySymbol="" />" name="price" type="text" class="form-control" required>
                         </div>
 
 

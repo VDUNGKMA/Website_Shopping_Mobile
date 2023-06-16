@@ -6,14 +6,9 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-
 <%
         ProductDao productDao = new ProductDao(dbConnection.getConnection());
         List<Category> category = productDao.getAllCategory();
-
-
-
-
 %>
 <!DOCTYPE html>
 <html lang="vi">
@@ -84,8 +79,16 @@
                         <img src="${p.image}" alt="">
                         <h3>${p.name}</h3>
                         <div class="price">
-                            <strong><fmt:formatNumber type="currency" value="${p.price}" currencySymbol="₫" /></strong>
-                            <span><fmt:formatNumber type="currency" value="${p.price}" currencySymbol="₫" /></span>
+                            <c:choose>
+                                <c:when test="${p.price == 0}">
+                                    <strong>Contact</strong>
+                                </c:when>
+                                <c:otherwise>
+                                    <strong><fmt:formatNumber type="currency" value="${p.price}" currencySymbol="" pattern="#,###"/>₫</strong>
+                                    <span><fmt:formatNumber type="currency" value="${p.price+1000000}" currencySymbol="" pattern="#,###" />₫</span>
+                                </c:otherwise>
+                            </c:choose>
+
                         </div>
                         <div class="ratingresult">
                             <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><span>10 assess</span>
@@ -113,8 +116,15 @@
                 <img src="${p.image}" alt="">
                 <h3>${p.name}</h3>
                 <div class="price">
-                    <strong>${p.price}₫</strong>
-                    <span>${p.price-100000}₫</span>
+                    <c:choose>
+                        <c:when test="${p.price == 0}">
+                            <strong>Contact</strong>
+                        </c:when>
+                        <c:otherwise>
+                            <strong><fmt:formatNumber type="currency" value="${p.price}" currencySymbol="" pattern="#,###"/>₫</strong>
+                            <span><fmt:formatNumber type="currency" value="${p.price+1000000}" currencySymbol="" pattern="#,###" />₫</span>
+                        </c:otherwise>
+                    </c:choose>
                 </div>
                 
                 <label class="giareonline">

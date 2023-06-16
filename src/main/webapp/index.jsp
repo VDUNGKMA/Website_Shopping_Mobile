@@ -192,7 +192,7 @@
                                     <strong>
                                         <%=new DecimalFormat("#,###").format(p.getPrice())%>₫</strong>
                                 </div>
-                                
+
                                 <label class="giamgia">
                                     <i class="fa fa-bolt"></i> Sale 20%
                                 </label>   </a>

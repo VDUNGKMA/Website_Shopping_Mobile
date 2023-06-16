@@ -3,6 +3,7 @@
 <%@ page import="java.util.Collections" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.text.DecimalFormat" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <!DOCTYPE html>
 <html lang="vi">
@@ -97,7 +98,7 @@
 			}%>
 			<tr style="font-weight:bold; text-align:center">
 				<td colspan="4">TOTAL: </td>
-				<td class="alignRight">${total>0 ?total:0} ₫</td>
+				<td class="alignRight"><fmt:formatNumber type="currency" value="${total>0 ?total:0} " currencySymbol=""  pattern="#,###"/>₫</td>
 				<td class="thanhtoan" onclick="thanhToan()"> BUY </td>
 				<td class="xoaHet"> <a class="btn btn-primary btn-block"  href="remove-product-form-cart" role="button">DELETE ALL</a> </td>
 			</tr>
